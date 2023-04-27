@@ -3,7 +3,7 @@ var cors = require('cors');
 //importing databse config connection
 require("./config/dotenv");
 const client = require("./config/database");
-// const user = require("./routes/users");
+const user = require("./routes/users");
 // const driver = require("./routes/driver")
 
 client.connect((err) => {
@@ -19,7 +19,7 @@ const app = express(); //Initialization express
 app.use(express.json());
 app.use(cors());
 
-// app.use("/user", user);
+app.use("/user", user);
 // app.use("/driver", driver);
 
 const port = process.env.PORT || 5000;
