@@ -19,8 +19,8 @@ const app = express(); //Initialization express
 app.use(express.json());
 app.use(cors());
 
-// app.use("/user", user);
-// app.use("/driver", driver);
+app.use("/user", user);
+app.use("/driver", driver);
 
 const port = process.env.PORT || 5000;
 app.get("/", (req, res) => {
