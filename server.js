@@ -3,8 +3,8 @@ var cors = require('cors');
 //importing databse config connection
 require("./config/dotenv");
 const client = require("./config/database");
-// const user = require("./routes/users");
-// const driver = require("./routes/driver")
+const user = require("./routes/users");
+const driver = require("./routes/driver")
 
 client.connect((err) => {
     if (err) {
