@@ -4,7 +4,7 @@ var cors = require('cors');
 require("./config/dotenv");
 const client = require("./config/database");
 const user = require("./routes/users");
-// const driver = require("./routes/driver")
+const driver = require("./routes/driver")
 
 client.connect((err) => {
     if (err) {
@@ -18,9 +18,10 @@ const app = express(); //Initialization express
 
 app.use(express.json());
 app.use(cors());
+// user program
 
 app.use("/user", user);
-// app.use("/driver", driver);
+app.use("/driver", driver);
 
 const port = process.env.PORT || 5000;
 app.get("/", (req, res) => {
